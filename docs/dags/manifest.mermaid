@@ -1,0 +1,32 @@
+---
+config:
+  theme: redux
+  layout: elk
+---
+flowchart LR
+    A["Get Manifest"] --> B["Extract URLS"]
+    B --> C["Damage Type Definitions"] & D["Stats Definitions"] & E["Lore Definitions"] & F["Collectible Definitions"] & G["Sockets Definitions"] & H["Weapon Type Definitions"] & I["Season Definitions"] & U["Season Raw Data"] & SS["Weapon Definitions"]
+    C --> P["Damage Type Cleaned"]
+    P --> R["Weapons"]
+    D --> O["Stats Cleaned"]
+    O --> R
+    E --> N["Lore Cleaned"]
+    N --> R
+    F --> M["Collectible Cleaned"]
+    M --> R
+    G --> L["Sockets Cleaned"]
+    L --> R
+    H --> K["Weapon Type Cleaned"]
+    K --> R
+    I --> J["Season Cleaned"]
+    J --> W["Seasons Joined"]
+    U --> V["Season Raw Cleaned"]
+    V --> W
+    SS --> T["Weapons Cleaned"]
+    T --> R
+    W --> R
+    R --> AA["Weapon Stats"] & AB["Weapon Sockets"]
+    AB --> AC["Weapon Perks"] & AD["Weapon Mods"]
+    style A fill:#f9f,stroke:#333,stroke-width:4px
+    style R fill:#bbf,stroke:#333,stroke-width:2px
+    style W fill:#bbf,stroke:#333,stroke-width:2px
